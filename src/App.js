@@ -1,9 +1,15 @@
-import Pizza from './Pizza';
+import { Cart, Home } from './pages';
+import { Route } from 'react-router-dom';
+import { Header } from './components';
 
 function App() {
   return (
-    <div>
-      <Pizza />
+    <div className="wrapper">
+      <Header />
+      <div className="content">
+        <Route exact path='/' component={Home} />
+        <Route exact path='/cart' component={Cart} />
+      </div>
     </div>
   );
 }
