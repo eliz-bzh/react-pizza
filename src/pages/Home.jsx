@@ -1,9 +1,9 @@
 import React from 'react';
-import { Pizza } from '../components';
+import { Pizzas } from '../components';
 
 const Home = ({ items }) => {
     return (
-        <Pizza items={items} />
+        <Pizzas items={items} />
     )
 }
 
