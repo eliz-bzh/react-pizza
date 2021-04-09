@@ -4,3 +4,4 @@ export { default as Button } from './Button';
 export { default as SortPopup } from './SortPopup';
 export { default as Pizza } from './Pizza';
 export { default as CartComponent } from './Cart';
+export { default as PizzaBlock } from './PizzaBlock';

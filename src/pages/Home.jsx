@@ -1,9 +1,9 @@
 import React from 'react';
 import { Pizza } from '../components';
 
-const Home = () => {
+const Home = ({ items }) => {
     return (
-        <Pizza />
+        <Pizza items={items} />
     )
 }
 
