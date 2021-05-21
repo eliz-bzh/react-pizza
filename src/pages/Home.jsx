@@ -1,9 +1,10 @@
 import React from 'react';
 import { Pizzas } from '../components';
 
-const Home = ({ items }) => {
+const Home = () => {
+
     return (
-        <Pizzas items={items} />
+        <Pizzas />
     )
 }
 

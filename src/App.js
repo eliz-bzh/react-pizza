@@ -4,15 +4,26 @@ import { Header } from './components';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { setPizzas } from './redux/actions/actionPizzas';
-import { connect } from 'react-redux';
-import { withRouter } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 
-function App({ setPizzas, items }) {
+const App = () => {
 
-  useEffect(() => {
+  const dispatch = useDispatch();
+
+  window.test = () => {
     axios.get('http://localhost:3000/db.json')
       .then(({ data }) => {
-        setPizzas(data.pizzas);
+        //console.log(data.response.data); //пицца лиссица
+        dispatch(setPizzas(data.pizzas));
+      })
+  }
+
+  useEffect(() => {
+    //https://pzz.by/api/v1/pizzas?load=ingredients,filters&filter=meal_only:0&order=position:asc //пицца лиссица
+    axios.get('http://localhost:3000/db.json')
+      .then(({ data }) => {
+        //console.log(data.response.data); //пицца лиссица
+        dispatch(setPizzas(data.pizzas));
       })
   }, [])
 
@@ -20,26 +31,27 @@ function App({ setPizzas, items }) {
     <div className="wrapper">
       <Header />
       <div className="content">
-        <Route exact path='/' render={() => <Home items={items} />} />
+        <Route exact path='/' component={Home} />
         <Route exact path='/cart' component={Cart} />
       </div>
     </div>
   );
 }
-
+/*
 const mapStateToProps = state => {
-  return {
-    items: state.pizzasReducer.items,
-    filters: state.filtersReducer
-  };
+ return {
+   items: state.pizzasReducer.items,
+   filters: state.filtersReducer
+ };
 };
 
-/*const mapDispatchToProps = dispatch => {
-  return { setPizzas: (items) => dispatch(setPizzasAction(items)) };
-};*/
+const mapDispatchToProps = dispatch => {
+ return { setPizzas: (items) => dispatch(setPizzasAction(items)) };
+};
 
 const mapDispatchToProps = {
-  setPizzas
+ setPizzas
 };
+*/
 //connect transfer dispatch as props
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default App;
