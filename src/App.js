@@ -10,20 +10,12 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  window.test = () => {
-    axios.get('http://localhost:3000/db.json')
-      .then(({ data }) => {
-        //console.log(data.response.data); //пицца лиссица
-        dispatch(setPizzas(data.pizzas));
-      })
-  }
-
   useEffect(() => {
     //https://pzz.by/api/v1/pizzas?load=ingredients,filters&filter=meal_only:0&order=position:asc //пицца лиссица
-    axios.get('http://localhost:3000/db.json')
+    axios.get('http://localhost:3001/pizzas')
       .then(({ data }) => {
         //console.log(data.response.data); //пицца лиссица
-        dispatch(setPizzas(data.pizzas));
+        dispatch(setPizzas(data));
       })
   }, [])
 
