@@ -53,7 +53,6 @@ const SortPopup = memo(({ items }) => {
             </div>}
         </div>
     )
-}
-)
+})
 
 export default SortPopup;

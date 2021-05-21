@@ -20,6 +20,6 @@ const Categories = memo(({ items, onClickItem }) => {
             </ul>
         </div>
     )
-}
-)
+})
+
 export default Categories;
