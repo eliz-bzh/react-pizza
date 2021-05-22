@@ -1,8 +1,11 @@
 import * as CONSTANTS from '../actions/actionTypes';
 
 const initialState = {
-    category: 0,
-    sortBy: 'popular'
+    category: null,
+    sortBy: {
+        type: 'rating',
+        order: 'asc'
+    }
 }
 
 const filters = (state = initialState, action) => {
