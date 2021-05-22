@@ -1,23 +1,8 @@
 import { Cart, Home } from './pages';
 import { Route } from 'react-router-dom';
 import { Header } from './components';
-import { useEffect } from 'react';
-import axios from 'axios';
-import { setPizzas } from './redux/actions/actionPizzas';
-import { useDispatch } from 'react-redux';
 
 const App = () => {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    //https://pzz.by/api/v1/pizzas?load=ingredients,filters&filter=meal_only:0&order=position:asc //пицца лиссица
-    axios.get('http://localhost:3001/pizzas')
-      .then(({ data }) => {
-        //console.log(data.response.data); //пицца лиссица
-        dispatch(setPizzas(data));
-      })
-  }, [])
 
   return (
     <div className="wrapper">
