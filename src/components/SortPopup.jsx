@@ -12,7 +12,8 @@ const SortPopup = memo(({ sortBy, items, onClickItem }) => {
     }
 
     const handleOutsideClick = (event) => {
-        if (!event.path.includes(sortRef.current)) {
+        const path = event.path || (event.composedPath && event.composedPath());//for Firefox event.path
+        if (!path.includes(sortRef.current)) {
             setVisible(false)
         }
     }
