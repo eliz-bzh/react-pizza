@@ -22,6 +22,7 @@ const Pizzas = () => {
         }
     });
     const { category, sortBy } = useSelector(({ filtersReducer }) => filtersReducer);
+    const { items: cartItems } = useSelector(({ cartReducer }) => cartReducer);
 
     const onSelectCategory = useCallback((index) => {
         dispatch(setCategory(index));
@@ -48,7 +49,7 @@ const Pizzas = () => {
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
                 {isLoaded ? items.map(item =>
-                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} {...item} />
+                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={cartItems[item.id]?.length} {...item} />
                 ) : Array(12).fill(0).map((_, index) => (<LoadingBlock key={index} />))}
             </div>
         </div >

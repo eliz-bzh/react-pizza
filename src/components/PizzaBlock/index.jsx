@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LoadingBlock } from '..';
 import Button from '../Button';
 
-const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClickItem }) => {
+const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClickItem, addedCount }) => {
 
     const availableTypes = ['тонкое', 'традиционное'];
     const availableSizes = [26, 30, 40];
@@ -62,7 +62,7 @@ const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClic
                         />
                     </svg>
                     <span>Добавить</span>
-                    <i>2</i>
+                    {addedCount && <i>{addedCount}</i>}
                 </Button>
             </div>
         </div>
@@ -77,7 +77,8 @@ PizzaBlock.propTypes = {
     sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
     price: PropTypes.number,
     isLoading: PropTypes.bool, 
-    onAddPizza: PropTypes.func
+    onAddPizza: PropTypes.func,
+    addedCount: PropTypes.number
 };
 
 PizzaBlock.defaultProps = {
