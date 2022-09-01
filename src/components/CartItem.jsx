@@ -1,8 +1,12 @@
+import { useDispatch } from "react-redux";
 import Button from "./Button";
 
 
-const CartItem = ({imageUrl, name, type, size, totalCount, totalPrice}) => {
+const CartItem = ({id, imageUrl, name, type, size, totalCount, totalPrice, onRemove, onMinus, onPlus}) => {
 
+    const handleRemoveClick = ()=> {
+        onRemove(id);
+    }
 
     return (
         <div className="cart__item">
@@ -64,7 +68,7 @@ const CartItem = ({imageUrl, name, type, size, totalCount, totalPrice}) => {
                 <b>{totalPrice} ₽</b>
             </div>
             <div className="cart__item-remove">
-                <Button /*onClick={handleRemoveClick}*/ className="button--circle" outline>
+                <Button onClick={handleRemoveClick} className="button--circle" outline>
                 <svg
                     width="10"
                     height="10"
