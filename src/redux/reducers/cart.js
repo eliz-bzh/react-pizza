@@ -8,6 +8,15 @@ const initialState = {
 
 const getTotalPrice = arr => arr.reduce((accum, item)=>accum + item.price, 0)
 
+const getObjTotalSums = objItem => {
+    const items = Object.values(objItem).map(obj=>obj.items);
+    const pizzas = [].concat.apply([], items);
+    const totalPrice = getTotalPrice(pizzas);
+    const totalCount = pizzas.length;
+
+    return { totalCount, totalPrice }
+}
+
 const cart = (state = initialState, action) => {
     switch (action.type) {
         case (CONSTANTS.ADD_ITEM_TO_CART): {
@@ -23,13 +32,12 @@ const cart = (state = initialState, action) => {
                 }
             };
 
-            const items = Object.values(newItem).map(obj=>obj.items)
-            const pizzas = [].concat.apply([], items);
-            const totalPrice = getTotalPrice(pizzas)
+            const totalCount = getObjTotalSums(newItem)['totalCount'];
+            const totalPrice = getObjTotalSums(newItem)['totalPrice'];
             
             return { ...state, 
                 items: newItem, 
-                totalCount: pizzas.length,
+                totalCount,
                 totalPrice
             };
         }
@@ -52,9 +60,55 @@ const cart = (state = initialState, action) => {
             }
         }
         case (CONSTANTS.MINUS_ITEM): {
+
+            const oldItems = state.items[action.payload].items;
             
+            if(oldItems.length > 1) {
+                const newList = state.items[action.payload].items.slice(1);
+                const newItem = {
+                    ...state.items,
+                    [action.payload]: {
+                        items: newList,
+                        totalPriceByPizza: getTotalPrice(newList)
+                    }
+                };
+
+                const totalCount = getObjTotalSums(newItem)['totalCount'];
+                const totalPrice = getObjTotalSums(newItem)['totalPrice'];
+                
+                return { ...state, 
+                    items: newItem, 
+                    totalCount,
+                    totalPrice
+                }
+
+            }
+
+            return state;
+
         }
         case (CONSTANTS.PLUS_ITEM): {
+            const newObjItem = [
+                ...state.items[action.payload].items,
+                state.items[action.payload].items[0]
+            ];
+
+            const newItem = {
+                ...state.items,
+                [action.payload]: {
+                    items: newObjItem,
+                    totalPriceByPizza: getTotalPrice(newObjItem)
+                }
+            };
+
+            const totalCount = getObjTotalSums(newItem)['totalCount'];
+            const totalPrice = getObjTotalSums(newItem)['totalPrice'];
+            
+            return { ...state, 
+                items: newItem, 
+                totalCount,
+                totalPrice
+            };
 
         }
         default: return state;
