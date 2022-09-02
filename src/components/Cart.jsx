@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Button from './Button';
@@ -33,6 +33,10 @@ const CartComponent = () => {
 
     const onPlusItem = (id) => {
         dispatch(plusItem(id))
+    }
+
+    const onClickOrder = () => {
+        console.log('ВАШ ЗАКАЗ', items)
     }
     
     return (
@@ -72,7 +76,7 @@ const CartComponent = () => {
                                     />
                                 </svg>
                                     Корзина</h2>
-                                <div onClick={onClearCart} className="cart__clear" outline>
+                                <div onClick={onClearCart} className="cart__clear">
                                 <svg
                                     width="20"
                                     height="20"
@@ -145,9 +149,9 @@ const CartComponent = () => {
                                         </svg>
                                         <span>Вернуться назад</span>
                                     </Link>
-                                    <div className="button pay-btn">
+                                    <Button onClick={onClickOrder} className="button pay-btn">
                                         <span>Оплатить сейчас</span>
-                                    </div>
+                                    </Button>
                                 </div>
                             </div>
                         </div>

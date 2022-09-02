@@ -16,7 +16,7 @@ const Categories = memo(({ activeItem, items, onClickItem }) => {
 
 //typing of object
 Categories.propTypes = {
-    activeItem: PropTypes.oneOf([PropTypes.number, null]),
+    //activeItem: PropTypes.oneOf([PropTypes.number, null]),
     items: PropTypes.arrayOf(PropTypes.string).isRequired,
     onClickItem: PropTypes.func.isRequired
 };

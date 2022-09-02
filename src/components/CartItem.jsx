@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
 import Button from "./Button";
-
 
 const CartItem = ({id, imageUrl, name, type, size, totalCount, totalPrice, onRemove, onMinus, onPlus}) => {
 
