@@ -22,7 +22,9 @@ const CartComponent = () => {
     }
 
     const onRemoveItem = (id) => {
-        dispatch(removeCartItem(id))
+        if(window.confirm('Вы действительно хотите удалить?')){
+            dispatch(removeCartItem(id))
+        }
     }
 
     const onMinusItem = (id) => {
