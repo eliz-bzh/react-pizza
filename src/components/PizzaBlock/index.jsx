@@ -8,8 +8,8 @@ const PizzaBlock = ({ id, images, name, types, sizes, prices, isLoading, onClick
 
     const availableTypes = ['традиционное', 'тонкое'];
     const availableSizes = [25, 30, 35];
-    const [activeType, setActiveType] = useState(types[0]);
-    const [activeSize, setActiveSize] = useState(sizes[0]);
+    const [activeType, setActiveType] = useState(0);
+    const [activeSize, setActiveSize] = useState(types[0].availableSizes[0]);
 
     if (isLoading) {
         return <LoadingBlock />;
@@ -30,18 +30,18 @@ const PizzaBlock = ({ id, images, name, types, sizes, prices, isLoading, onClick
             <h4 className="pizza-block__title">{name}</h4>
             <div className="pizza-block__selector">
                 <ul>
-                    {availableTypes.map((type, index) =>
-                        <li key={type} onClick={() => setActiveType(index)} className={classNames({
+                    {types.map((type, index) =>
+                        <li key={type.id} onClick={() => setActiveType(index)} className={classNames({
                             'active': activeType === index,
-                            'disabled': !types.includes(index)
-                        })}>{type}</li>
+                            'disabled': !types.includes(type)
+                        })}>{availableTypes[type.id]}</li>
                     )}
                 </ul>
                 <ul>
                     {availableSizes.map(size =>
                         <li key={size} onClick={() => setActiveSize(size)} className={classNames({
                             'active': activeSize === size,
-                            'disabled': !sizes.includes(size)
+                            'disabled': !types[activeType].availableSizes.includes(size)
                         })}>{size} см.</li>
                     )}
                 </ul>
@@ -72,18 +72,15 @@ const PizzaBlock = ({ id, images, name, types, sizes, prices, isLoading, onClick
 //typing of object
 PizzaBlock.propTypes = {
     name: PropTypes.string,
-    imageUrl: PropTypes.string,
-    types: PropTypes.arrayOf(PropTypes.number).isRequired,
-    sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
-    price: PropTypes.number,
+    images: PropTypes.object.isRequired,
+    types: PropTypes.arrayOf(PropTypes.object).isRequired,
+    prices: PropTypes.object.isRequired,
     isLoading: PropTypes.bool, 
     onAddPizza: PropTypes.func,
     addedCount: PropTypes.number
 };
 
 PizzaBlock.defaultProps = {
-    types: [],
-    sizes: [],
     isLoading: false
 };
 
