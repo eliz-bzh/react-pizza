@@ -117,9 +117,9 @@ const CartComponent = () => {
                             </div>
                             <div className="content__items">
                                 {pizzasCart.map((obj)=>
-                                    <CartItem key={obj.id} 
-                                    totalCount={items[obj.id].items.length} 
-                                    totalPrice={items[obj.id].totalPriceByPizza} 
+                                    <CartItem key={`${obj.id}-${obj.size}-${obj.type}`}
+                                    totalCount={items[`${obj.id}-${obj.size}-${obj.type}`].items.length}
+                                    totalPrice={items[`${obj.id}-${obj.size}-${obj.type}`].totalPriceByPizza}
                                     {...obj} 
                                     onRemove={onRemoveItem}
                                     onMinus={onMinusItem}
