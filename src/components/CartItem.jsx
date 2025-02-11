@@ -3,15 +3,15 @@ import Button from "./Button";
 const CartItem = ({id, imageUrl, name, type, size, totalCount, totalPrice, onRemove, onMinus, onPlus}) => {
 
     const handleRemoveClick = ()=> {
-        onRemove(id);
+        onRemove(`${id}-${size}-${type}`);
     }
 
     const handleMinusItem = () => {
-        onMinus(id);
+        onMinus(`${id}-${size}-${type}`);
     }
 
     const handlePlusItem = () => {
-        onPlus(id);
+        onPlus(`${id}-${size}-${type}`);
     }
 
     return (
