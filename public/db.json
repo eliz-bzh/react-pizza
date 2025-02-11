@@ -2,166 +2,366 @@
   "pizzas": [
     {
       "id": 0,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-      "name": "Пепперони Фреш с перцем",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c1c30c14aec39c249e91d646.avif",
+          "30":"https://media.dodostatic.net/image/r:584x584/11ef9a30c3246adebecb726548cbede9.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c6e02d0cbaa2ef1eeb4eab0e.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c51415eb839ecbfd2f894fe7.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c8d8334c967b537852d7c639.avif"
+        }
+      },
+      "name": "Чилл Грилл",
+      "ingredients": ["Цыпленок", "маринованные огурчики", "соус гриль, красный лук", "моцарелла", "чеснок", "фирменный соус альфредо"],
       "types": [
         0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 803,
+      "prices": {
+        "25": 519,
+        "30": 789,
+        "35": 929
+      },
       "category": 0,
       "rating": 4
     },
     {
       "id": 1,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/2ffc31bb-132c-4c99-b894-53f7107a1441.jpg",
-      "name": "Сырная",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:584x584/11eeaaf6bca45d9fad523e13ee74f1c0.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6c9099f1684ca1fd19d7dad34.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:584x584/11eeaaf6bca45d9fad523e13ee74f1c0.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6c9099f1684ca1fd19d7dad34.avif"
+        }
+      },
+      "name": "Кантри-пицца",
+      "ingredients": ["Бекон", "ветчина", "жареный лук", "маринованные огурчики", "красный лук", "чеснок", "моцарелла", "соус ранч", "соус барбекю"],
       "types": [
-        0
+        0,
+        1
       ],
       "sizes": [
-        26,
-        40
+        25,
+        30,
+        35
       ],
-      "price": 245,
-      "category": 1,
-      "rating": 6
+      "prices": {
+        "25": 519,
+        "30": 789,
+        "35": 929
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 2,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/6652fec1-04df-49d8-8744-232f1032c44b.jpg",
-      "name": "Цыпленок барбекю",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/01944918edec7237afee5ae2e79dcf7e.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194491914e478b4aa3e18d44e07eed9.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194491929f1789abe46fe853cd6f1a0.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/019449191eb57702965cdd6f0d0c1a6a.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/01944919394c7652b1d1e98856fb85af.avif"
+        }
+      },
+      "name": "Баварская",
+      "ingredients": ["Баварские колбаски", "маринованные огурчики", "красный лук", "томаты", "горчичный соус", "моцарелла", "фирменный томатный соус"],
       "types": [
-        0
+        0,
+        1
       ],
       "sizes": [
-        26,
-        40
+        25,
+        30,
+        35
       ],
-      "price": 295,
-      "category": 1,
+      "prices": {
+        "25": 549,
+        "30": 819,
+        "35": 999
+      },
+      "category": 0,
       "rating": 4
     },
     {
       "id": 3,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-      "name": "Кисло-сладкий цыпленок",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11ef90505389bad28580ca85fb2ffa65.avif",
+          "30":"https://media.dodostatic.net/image/r:584x584/11ef9050501f3fa690a64053f5f07626.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ef90504b5a315b911f0dd90895fe05.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ef90504ce9f07c8209006cf8e0a585.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ef905049346ca6bd1bf985a3513048.avif"
+        }
+      },
+      "name": "Кола-барбекю",
+      "ingredients": ["Пряная говядина", "пикантная пепперони", "острые колбаски чоризо", "соус кола-барбекю", "моцарелла", "фирменный томатный соус"],
       "types": [
+        0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 275,
-      "category": 2,
-      "rating": 2
+      "prices": {
+        "25": 599,
+        "30": 889,
+        "35": 1049
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 4,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
-      "name": "Чизбургер-пицца",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/0194d4f62142707eaebe3a3402a63ddc.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6904975a5a6427e297591980d.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6b569714c81b4699dcda65116.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6a6f07488bea1dcb9340e3495.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6bbc67215a6c489e31f9b3f1c.avif"
+        }
+      },
+      "name": "Мясной микс с говядиной и колбасками",
+      "ingredients": ["Пряная говядина", "баварские колбаски", "пикантная пепперони", "бекон", "моцарелла", "фирменный томатный соус"],
       "types": [
         0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 415,
-      "category": 3,
-      "rating": 8
+      "prices": {
+        "25": 599,
+        "30": 889,
+        "35": 1099
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 5,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/1e1a6e80-b3ba-4a44-b6b9-beae5b1fbf27.jpg",
-      "name": "Крэйзи пепперони",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/0194d4f7e5857154afca068cdf307e05.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4f7ee96785e8dbe7a41a8c330ee.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f845ab7620a03f83561d2bfe29.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4f7f44c755c9f7b732fc9d206df.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f84c22791faa0d5670e4f3f5ac.avif"
+        }
+      },
+      "name": "Бефстроганов",
+      "ingredients": ["Пряная говядина", "шампиньоны", "грибной соус", "маринованные огурчики", "моцарелла", "красный лук", "фирменный соус альфредо"],
       "types": [
-        0
+        0,
+        1
       ],
       "sizes": [
+        25,
         30,
-        40
+        35
       ],
-      "price": 580,
-      "category": 2,
-      "rating": 2
+      "prices": {
+        "25": 549,
+        "30": 819,
+        "35": 999
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 6,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d2e337e9-e07a-4199-9cc1-501cc44cb8f8.jpg",
-      "name": "Пепперони",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa592670f083dc463c30065395.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa65f277598a143a7ba341da53.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa77a378ea95d903a473186173.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa6f1c77009ee617ea9e2d126b.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa7e447905be80fc6044b81c9d.avif"
+        }
+      },
+      "name": "Мясная с аджикой 🌶️",
+      "ingredients": ["Баварские колбаски", "острый соус аджика", "острые колбаски чоризо", "цыпленок", "пикантная пепперони", "моцарелла", "фирменный томатный соус"],
       "types": [
         0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 675,
-      "category": 1,
-      "rating": 9
+      "prices": {
+        "25": 549,
+        "30": 819,
+        "35": 999
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 7,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/d48003cd-902c-420d-9f28-92d9dc5f73b4.jpg",
-      "name": "Маргарита",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd22cb74c1bff42c8552f6e0a0.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd39bb7352bfa5de2219e88b9b.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd4ba4798887defbdb3bc48750.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd4065748ca6195656951081e0.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd5264795e9ead873595b79062.avif"
+        }
+      },
+      "name": "Креветки со сладким чили",
+      "ingredients": [ "Креветки", "ананасы", "соус сладкий чили", "сладкий перец", "моцарелла", "фирменный соус альфредо" ],
       "types": [
         0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 450,
-      "category": 4,
-      "rating": 10
+      "prices": {
+        "25": 619,
+        "30": 919,
+        "35": 1039
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 8,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/ec29465e-606b-4a04-a03e-da3940d37e0e.jpg",
-      "name": "Четыре сезона",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610cf7e265b7c72be5ae757ca7.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610d2925109ab2e1c92cc5383c.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610d91679bb519f38c3f45880f.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610d5dbb14a551b640b90776fc.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610dbefef68ade96df563888b4.avif"
+        }
+      },
+      "name": "Сырная 🌱👶🏼",
+      "ingredients": [ "Моцарелла", "сыры чеддер и пармезан", "фирменный соус альфредо" ],
       "types": [
         0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 395,
-      "category": 5,
-      "rating": 10
+      "prices": {
+        "25": 325,
+        "30": 619,
+        "35": 779
+      },
+      "category": 0,
+      "rating": 4
     },
     {
       "id": 9,
-      "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/30367198-f3bd-44ed-9314-6f717960da07.jpg",
-      "name": "Овощи и грибы 🌱",
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11ee7d612f98bc0ea828957caff9c8ec.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d612fc7b7fca5be822752bee1e5.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d6130241e75b0ab33725248c0d0.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d612ff49f2c98064fb647c3aa86.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d61304faf5a98a6958f2bb2d260.avif"
+        }
+      },
+      "name": "Пепперони фреш",
+      "ingredients": [ "Пикантная пепперони", "увеличенная порция моцареллы", "томаты", "фирменный томатный соус" ],
       "types": [
         0,
         1
       ],
       "sizes": [
-        26,
+        25,
         30,
-        40
+        35
       ],
-      "price": 285,
-      "category": 5,
-      "rating": 7
+      "prices": {
+        "25": 369,
+        "30": 629,
+        "35": 749
+      },
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 10,
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614c92fba9a7c5f124c809fe88.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614cbe0530b7234b6d7a6e5f8e.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614d1bb6cb8ded93790d79e466.avif"
+        },
+        "1": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614ce7d88391642fe26ecb2245.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614d572a8e844206649c75c132.avif"
+        }
+      },
+      "name": "Двойной цыпленок 👶🏼",
+      "ingredients": [ "Цыпленок", "моцарелла", "фирменный соус альфредо" ],
+      "types": [
+        0,
+        1
+      ],
+      "sizes": [
+        25,
+        30,
+        35
+      ],
+      "prices": {
+        "25": 489,
+        "30": 749,
+        "35": 869
+      },
+      "category": 0,
+      "rating": 4
     }
   ]
 }
