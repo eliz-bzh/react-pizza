@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { LoadingBlock } from '..';
 import Button from '../Button';
 
-const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClickItem, addedCount }) => {
+const PizzaBlock = ({ id, images, name, types, sizes, prices, isLoading, onClickItem, addedCount }) => {
 
-    const availableTypes = ['тонкое', 'традиционное'];
-    const availableSizes = [26, 30, 40];
+    const availableTypes = ['традиционное', 'тонкое'];
+    const availableSizes = [25, 30, 35];
     const [activeType, setActiveType] = useState(types[0]);
     const [activeSize, setActiveSize] = useState(sizes[0]);
 
@@ -16,7 +16,7 @@ const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClic
     }
 
     const onAddPizza = () => {
-        const obj = { id, name, imageUrl, price, size: activeSize, type: availableTypes[activeType] };
+        const obj = { id, name, imageUrl: images[activeType][activeSize], price: prices[activeSize], size: activeSize, type: availableTypes[activeType] };
         onClickItem(obj)
     };
 
@@ -24,7 +24,7 @@ const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClic
         <div className="pizza-block">
             <img
                 className="pizza-block__image"
-                src={imageUrl}
+                src={images[activeType][activeSize]}
                 alt="Pizza"
             />
             <h4 className="pizza-block__title">{name}</h4>
@@ -47,7 +47,7 @@ const PizzaBlock = ({ id, imageUrl, name, types, sizes, price, isLoading, onClic
                 </ul>
             </div>
             <div className="pizza-block__bottom">
-                <div className="pizza-block__price">от {price} ₽</div>
+                <div className="pizza-block__price">от {prices[activeSize]} ₽</div>
                 <Button onClick={onAddPizza} className='button--add' outline>
                     <svg
                         width="12"
