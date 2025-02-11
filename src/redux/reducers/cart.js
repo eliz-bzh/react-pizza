@@ -20,13 +20,14 @@ const getObjTotalSums = objItem => {
 const cart = (state = initialState, action) => {
     switch (action.type) {
         case (CONSTANTS.ADD_ITEM_TO_CART): {
-            const currentPizzas = !state.items[action.payload.id]
+            const pizzaKey = `${action.payload.id}-${action.payload.size}-${action.payload.type}`;
+            const currentPizzas = !state.items[pizzaKey]
             ? [action.payload]
-            : [...state.items[action.payload.id].items, action.payload];
+            : [...state.items[pizzaKey].items, action.payload];
 
             const newItem = {
                 ...state.items,
-                [action.payload.id]: {
+                [pizzaKey]: {
                     items: currentPizzas,
                     totalPriceByPizza: getTotalPrice(currentPizzas)
                 }
@@ -36,7 +37,7 @@ const cart = (state = initialState, action) => {
             const totalPrice = getObjTotalSums(newItem)['totalPrice'];
             
             return { ...state, 
-                items: newItem, 
+                items: newItem,
                 totalCount,
                 totalPrice
             };
