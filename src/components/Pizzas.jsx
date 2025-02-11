@@ -8,7 +8,7 @@ import { addToCart } from '../redux/actions/actionCart';
 const categories = ['Мясные', 'Вегетарианская', 'Гриль', 'Острые', 'Закрытые'];
 const sortItems = [
     { name: 'популярности', type: 'rating', order: 'asc' },
-    { name: 'цене', type: 'price', order: 'desc' },
+    { name: 'цене', type: 'prices.25', order: 'desc' },
     { name: 'алфавиту', type: 'name', order: 'asc' }
 ];
 
@@ -26,19 +26,19 @@ const Pizzas = () => {
 
     const onSelectCategory = useCallback((index) => {
         dispatch(setCategory(index));
-    }, [])
+    }, [dispatch])
 
     const onSelectSortBy = useCallback((item) => {
         dispatch(setSortBy(item));
-    }, [])
+    }, [dispatch])
 
     const addPizzaToCart = useCallback((obj)=>{
         dispatch(addToCart(obj))
-    },[])
+    },[dispatch])
 
     useEffect(() => {
         dispatch(fetchPizzas(sortBy, category));
-    }, [category, sortBy])
+    }, [category, dispatch, sortBy])
 
     return (
         <div className="container">
