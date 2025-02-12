@@ -69,4 +69,15 @@
     line-height: 27px;
     letter-spacing: 0.015em;
   }
+
+  &__ingredients {
+    text-align: start;
+
+    span {
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+      margin: 0 1%;
+    }
+  }
 }
