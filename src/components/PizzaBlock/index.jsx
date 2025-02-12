@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { LoadingBlock } from '..';
 import Button from '../Button';
 
-const PizzaBlock = ({ id, images, name, types, sizes, prices, isLoading, onClickItem, addedCount }) => {
+const PizzaBlock = ({ id, images, name, types, prices, isLoading, onClickItem, addedCount }) => {
 
     const availableTypes = ['традиционное', 'тонкое'];
     const availableSizes = [25, 30, 35];
@@ -19,6 +19,11 @@ const PizzaBlock = ({ id, images, name, types, sizes, prices, isLoading, onClick
         const obj = { id, name, imageUrl: images[activeType][activeSize], price: prices[activeSize], size: activeSize, type: availableTypes[activeType] };
         onClickItem(obj)
     };
+
+    // Установить активный размер на первый доступный, если текущий недоступен
+    if (!types[activeType].availableSizes.includes(activeSize)) {
+        setActiveSize(types[activeType].availableSizes[0]);
+    }
 
     return (
         <div className="pizza-block">
