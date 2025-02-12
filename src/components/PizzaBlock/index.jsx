@@ -9,7 +9,7 @@ const PizzaBlock = ({ id, images, name, types, prices, isLoading, onClickItem, a
     const availableTypes = ['традиционное', 'тонкое'];
     const availableSizes = [25, 30, 35];
     const [activeType, setActiveType] = useState(0);
-    const [activeSize, setActiveSize] = useState(types[0].availableSizes[0]);
+    const [activeSize, setActiveSize] = useState(types[0].availableSizes[0].size);
 
     if (isLoading) {
         return <LoadingBlock />;
@@ -21,8 +21,8 @@ const PizzaBlock = ({ id, images, name, types, prices, isLoading, onClickItem, a
     };
 
     // Установить активный размер на первый доступный, если текущий недоступен
-    if (!types[activeType].availableSizes.includes(activeSize)) {
-        setActiveSize(types[activeType].availableSizes[0]);
+    if (!types[activeType].availableSizes.some(s=>s.size === activeSize)) {
+        setActiveSize(types[activeType].availableSizes[0].size);
     }
 
     return (
@@ -46,7 +46,7 @@ const PizzaBlock = ({ id, images, name, types, prices, isLoading, onClickItem, a
                     {availableSizes.map(size =>
                         <li key={size} onClick={() => setActiveSize(size)} className={classNames({
                             'active': activeSize === size,
-                            'disabled': !types[activeType].availableSizes.includes(size)
+                            'disabled': !types[activeType].availableSizes.some(s=>s.size === size)
                         })}>{size} см.</li>
                     )}
                 </ul>
