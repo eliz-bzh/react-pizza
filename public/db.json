@@ -9,7 +9,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c6e02d0cbaa2ef1eeb4eab0e.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c51415eb839ecbfd2f894fe7.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ef9a30c8d8334c967b537852d7c639.avif"
         }
@@ -19,11 +18,31 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 390
+            },
+            {
+              "size": 30,
+              "weight": 560
+            },
+            {
+              "size": 35,
+              "weight": 800
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 480
+            },
+            {
+              "size": 35,
+              "weight": 690
+            }]
         }
       ],
       "prices": {
@@ -31,8 +50,8 @@
         "30": 789,
         "35": 929
       },
-      "category": 0,
-      "rating": 4
+      "category": 2,
+      "rating": 2
     },
     {
       "id": 1,
@@ -43,7 +62,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6c9099f1684ca1fd19d7dad34.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:584x584/11eeaaf6bca45d9fad523e13ee74f1c0.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6c9099f1684ca1fd19d7dad34.avif"
         }
@@ -53,17 +71,32 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 440
+            },
+            {
+              "size": 30,
+              "weight": 680
+            },
+            {
+              "size": 35,
+              "weight": 890
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 515
+            },
+            {
+              "size": 35,
+              "weight": 775
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 519,
@@ -71,7 +104,7 @@
         "35": 929
       },
       "category": 0,
-      "rating": 4
+      "rating": 1
     },
     {
       "id": 2,
@@ -82,7 +115,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194491929f1789abe46fe853cd6f1a0.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/019449191eb57702965cdd6f0d0c1a6a.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/01944919394c7652b1d1e98856fb85af.avif"
         }
@@ -92,24 +124,39 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 400
+            },
+            {
+              "size": 30,
+              "weight": 590
+            },
+            {
+              "size": 35,
+              "weight": 820
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 440
+            },
+            {
+              "size": 35,
+              "weight": 690
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 549,
         "30": 819,
         "35": 999
       },
-      "category": 0,
+      "category": 4,
       "rating": 4
     },
     {
@@ -121,7 +168,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ef90504b5a315b911f0dd90895fe05.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/11ef90504ce9f07c8209006cf8e0a585.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ef905049346ca6bd1bf985a3513048.avif"
         }
@@ -131,25 +177,40 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 350
+            },
+            {
+              "size": 30,
+              "weight": 540
+            },
+            {
+              "size": 35,
+              "weight": 790
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 420
+            },
+            {
+              "size": 35,
+              "weight": 650
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 599,
         "30": 889,
         "35": 1049
       },
-      "category": 0,
-      "rating": 4
+      "category": 3,
+      "rating": 3
     },
     {
       "id": 4,
@@ -160,7 +221,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6b569714c81b4699dcda65116.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6a6f07488bea1dcb9340e3495.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f6bbc67215a6c489e31f9b3f1c.avif"
         }
@@ -170,17 +230,32 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 400
+            },
+            {
+              "size": 30,
+              "weight": 590
+            },
+            {
+              "size": 35,
+              "weight": 820
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 440
+            },
+            {
+              "size": 35,
+              "weight": 690
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 599,
@@ -188,7 +263,7 @@
         "35": 1099
       },
       "category": 0,
-      "rating": 4
+      "rating": 6
     },
     {
       "id": 5,
@@ -199,7 +274,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f845ab7620a03f83561d2bfe29.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4f7f44c755c9f7b732fc9d206df.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4f84c22791faa0d5670e4f3f5ac.avif"
         }
@@ -209,25 +283,40 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 410
+            },
+            {
+              "size": 30,
+              "weight": 570
+            },
+            {
+              "size": 35,
+              "weight": 770
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 420
+            },
+            {
+              "size": 35,
+              "weight": 680
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 549,
         "30": 819,
         "35": 999
       },
-      "category": 0,
-      "rating": 4
+      "category": 4,
+      "rating": 8
     },
     {
       "id": 6,
@@ -238,7 +327,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa77a378ea95d903a473186173.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa6f1c77009ee617ea9e2d126b.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fa7e447905be80fc6044b81c9d.avif"
         }
@@ -248,25 +336,40 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 420
+            },
+            {
+              "size": 30,
+              "weight": 610
+            },
+            {
+              "size": 35,
+              "weight": 840
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 520
+            },
+            {
+              "size": 35,
+              "weight": 720
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 549,
         "30": 819,
         "35": 999
       },
-      "category": 0,
-      "rating": 4
+      "category": 3,
+      "rating": 7
     },
     {
       "id": 7,
@@ -277,7 +380,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd4ba4798887defbdb3bc48750.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd4065748ca6195656951081e0.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/0194d4fd5264795e9ead873595b79062.avif"
         }
@@ -287,25 +389,40 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 390
+            },
+            {
+              "size": 30,
+              "weight": 630
+            },
+            {
+              "size": 35,
+              "weight": 800
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 480
+            },
+            {
+              "size": 35,
+              "weight": 710
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 619,
         "30": 919,
         "35": 1039
       },
-      "category": 0,
-      "rating": 4
+      "category": 3,
+      "rating": 5
     },
     {
       "id": 8,
@@ -316,7 +433,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610d91679bb519f38c3f45880f.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610d5dbb14a551b640b90776fc.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d610dbefef68ade96df563888b4.avif"
         }
@@ -326,25 +442,40 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 310
+            },
+            {
+              "size": 30,
+              "weight": 470
+            },
+            {
+              "size": 35,
+              "weight": 640
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 360
+            },
+            {
+              "size": 35,
+              "weight": 530
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 325,
         "30": 619,
         "35": 779
       },
-      "category": 0,
-      "rating": 4
+      "category": 1,
+      "rating":11
     },
     {
       "id": 9,
@@ -355,7 +486,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d6130241e75b0ab33725248c0d0.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d612ff49f2c98064fb647c3aa86.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d61304faf5a98a6958f2bb2d260.avif"
         }
@@ -365,25 +495,40 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 380
+            },
+            {
+              "size": 30,
+              "weight": 590
+            },
+            {
+              "size": 35,
+              "weight": 790
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 490
+            },
+            {
+              "size": 35,
+              "weight": 670
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 369,
         "30": 629,
         "35": 749
       },
-      "category": 0,
-      "rating": 4
+      "category": 4,
+      "rating": 9
     },
     {
       "id": 10,
@@ -394,7 +539,6 @@
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614d1bb6cb8ded93790d79e466.avif"
         },
         "1": {
-          "25":"https://media.dodostatic.net/image/r:1875x1875/11eeaaf6b95449799c968e0af4e124d9.avif",
           "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614ce7d88391642fe26ecb2245.avif",
           "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d614d572a8e844206649c75c132.avif"
         }
@@ -404,17 +548,32 @@
       "types": [
         {
           "id": 0,
-          "availableSizes": [25, 30, 35]
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 360
+            },
+            {
+              "size": 30,
+              "weight": 520
+            },
+            {
+              "size": 35,
+              "weight": 730
+            }]
         },
         {
           "id": 1,
-          "availableSizes": [30, 35]
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 430
+            },
+            {
+              "size": 35,
+              "weight": 610
+            }]
         }
-      ],
-      "sizes": [
-        25,
-        30,
-        35
       ],
       "prices": {
         "25": 489,
@@ -422,7 +581,60 @@
         "35": 869
       },
       "category": 0,
-      "rating": 4
+      "rating": 10
+    },
+    {
+      "id": 11,
+      "images": {
+        "0": {
+          "25":"https://media.dodostatic.net/image/r:1875x1875/11ee7d61543cb077931c15b0e271347f.avif",
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d61546d8483a61a0bbaa7adcc78.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d6154c786f2940500127aa6d33e.avif"
+        },
+        "1": {
+          "30":"https://media.dodostatic.net/image/r:1875x1875/11ee7d6154983942b98a2318a1455f88.avif",
+          "35":"https://media.dodostatic.net/image/r:1875x1875/11ee7d6154ed7cedada4f410c8947498.avif"
+        }
+      },
+      "name": "Овощи и грибы 🌱",
+      "ingredients": [ "Шампиньоны", "томаты", "сладкий перец", "красный лук", "кубики брынзы", "моцарелла", "фирменный томатный соус", "итальянские травы" ],
+      "types": [
+        {
+          "id": 0,
+          "availableSizes": [
+            {
+              "size": 25,
+              "weight": 420
+            },
+            {
+              "size": 30,
+              "weight": 610
+            },
+            {
+              "size": 35,
+              "weight": 870
+            }]
+        },
+        {
+          "id": 1,
+          "availableSizes": [
+            {
+              "size": 30,
+              "weight": 530
+            },
+            {
+              "size": 35,
+              "weight": 740
+            }]
+        }
+      ],
+      "prices": {
+        "25": 609,
+        "30": 919,
+        "35": 1059
+      },
+      "category": 1,
+      "rating": 12
     }
   ]
 }
