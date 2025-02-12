@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LoadingBlock } from '..';
 import Button from '../Button';
 
-const PizzaBlock = ({ id, images, name, types, prices, isLoading, onClickItem, addedCount }) => {
+const PizzaBlock = ({ id, images, name, types, prices, ingredients, isLoading, onClickItem, addedCount }) => {
 
     const availableTypes = ['традиционное', 'тонкое'];
     const availableSizes = [25, 30, 35];
@@ -51,8 +51,11 @@ const PizzaBlock = ({ id, images, name, types, prices, isLoading, onClickItem, a
                     )}
                 </ul>
             </div>
+            {/*<div className="pizza-block__ingredients">{ingredients.map((ing, index)=><span key={index}>{!(index === ingredients.length-1) ? `${ing}, ` : ing}</span>)}</div>*/}
+
             <div className="pizza-block__bottom">
                 <div className="pizza-block__price">от {prices[activeSize]} ₽</div>
+                {/*<div>{types[activeType].availableSizes.find(el=>el.size === activeSize)?.weight}</div>*/}
                 <Button onClick={onAddPizza} className='button--add' outline>
                     <svg
                         width="12"
