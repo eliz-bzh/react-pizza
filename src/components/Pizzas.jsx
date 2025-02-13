@@ -76,15 +76,24 @@ const Pizzas = () => {
                     <div className="dialog__container__content">
                         <div className="left">
                             <img
-                                className="pizza-block__image"
+                                //className={`pizza-block__image`}
+                                className={classNames({
+                                    'pizza-block__image': 1,
+                                    'pizza_30': activeSize === 30,
+                                    'pizza_35': activeSize === 35
+                                })}
                                 src={selectedPizza.images[activeType][activeSize]}
                                 alt="Pizza"
                             />
                         </div>
                         <div className="right">
                             <div className="dialog__container__header" onClick={() => setDialogShow(false)}>
+                                <h4 className="pizza-block__title">{selectedPizza.name}</h4>
                                 <span className="close">&times;</span>
                             </div>
+
+                            <div className="pizza-block__ingredients">{selectedPizza.ingredients.map((ing, index)=><span key={index}>{!(index === selectedPizza.ingredients.length-1) ? `${ing}, ` : ing}</span>)}</div>
+
                             <div className="pizza-block__selector">
                                 <ul>
                                     {selectedPizza.types.map((type, index) =>
@@ -103,10 +112,9 @@ const Pizzas = () => {
                                     )}
                                 </ul>
                             </div>
-                            {/*<div className="pizza-block__ingredients">{ingredients.map((ing, index)=><span key={index}>{!(index === ingredients.length-1) ? `${ing}, ` : ing}</span>)}</div>*/}
 
                             <div className="pizza-block__bottom">
-                                <div className="pizza-block__price">от {selectedPizza.prices[activeSize]} ₽</div>
+                                <div className="pizza-block__price">В корзину за {selectedPizza.prices[activeSize]} ₽</div>
                                 {/*<div>{types[activeType].availableSizes.find(el=>el.size === activeSize)?.weight}</div>*/}
                                 <Button onClick={addPizzaToCart} className='button--add' outline>
                                     <svg
