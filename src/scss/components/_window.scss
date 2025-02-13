@@ -67,6 +67,21 @@
           align-items: center;
           width: 60%;
           padding: 20px 0;
+
+          img {
+            &.pizza-block__image {
+              width: 350px;
+
+              &.pizza_30 {
+                width: 410px;
+              }
+              &.pizza_35 {
+                width: 470px;
+              }
+            }
+          }
+
+
         }
         &.right {
           width: 40%;
