@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { Categories, LoadingBlock, PizzaBlock, SortPopup } from '.';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCategory, setSortBy } from '../redux/actions/actionsFilter';
@@ -40,6 +40,14 @@ const Pizzas = () => {
         dispatch(fetchPizzas(sortBy, category));
     }, [category, dispatch, sortBy])
 
+
+    const [dialogShow, setDialogShow] = useState(false);
+    const [selectedPizza, setSelectedPizza] = useState({});
+
+    const handlePizzaClick = (pizza)=>{
+        setSelectedPizza(pizza);
+    }
+
     return (
         <div className="container">
             <div className="content__top">
@@ -49,9 +57,23 @@ const Pizzas = () => {
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
                 {isLoaded ? items.map(item =>
-                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={cartItems[item.id]?.items.length} {...item} />
+                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={cartItems[item.id]?.items.length} handleClickPizza={()=>handlePizzaClick(item)} handleDialogShow={setDialogShow} {...item} />
                 ) : Array(12).fill(0).map((_, index) => (<LoadingBlock key={index} />))}
             </div>
+            {dialogShow && (<div className="dialog">
+                <div className="dialog__container">
+                    <div className="dialog__container__content">
+                        <div className="left">{selectedPizza.name}</div>
+                        <div className="right">
+                            <div className="dialog__container__header" onClick={() => setDialogShow(false)}>
+                                <span className="close">&times;</span>
+                            </div>
+                            right
+                        </div>
+                    </div>
+                </div>
+            </div>)}
+
         </div >
     )
 }
