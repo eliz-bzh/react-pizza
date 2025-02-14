@@ -108,9 +108,12 @@ const Pizzas = () => {
                             <div className="pizza-block__selector">
                                 <ul>
                                     {availableTypes.map((type, index) =>
-                                        <li key={type} onClick={() => setActiveType(index)} className={classNames({
-                                            'active': activeType === index,
-                                            'disabled': !selectedPizza.types?.some(s=>s.id === index)
+                                        <li key={type} onClick={() => {
+                                            setActiveType(selectedPizza.types[index]?.id);
+                                            setActiveSize(selectedPizza.types[index]?.availableSizes[0].size);
+                                        }} className={classNames({
+                                            'active': activeType === selectedPizza.types[index]?.id,
+                                            'disabled': !selectedPizza.types?.some(s=>s.id === selectedPizza.types[index]?.id)
                                         })}>{type}</li>
                                     )}
                                 </ul>
