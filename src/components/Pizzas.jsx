@@ -118,8 +118,7 @@ const Pizzas = () => {
                                     {availableSizes.map((size, index) =>
                                         <li key={size} onClick={() => setActiveSize(size)} className={classNames({
                                             'active': activeSize === size,
-                                            'disabled': selectedPizza.types[index]?.availableSizes !== undefined &&
-                                                !selectedPizza.types[index]?.availableSizes.some(s => s.size === size)
+                                            'disabled': !selectedPizza?.types?.find(el=>el.id === activeType)?.availableSizes.some(el=>el.size === size)
                                         })}>{size} см.</li>
                                     )}
                                 </ul>
