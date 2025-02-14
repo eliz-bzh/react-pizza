@@ -107,19 +107,18 @@ const Pizzas = () => {
 
                             <div className="pizza-block__selector">
                                 <ul>
-                                    {availableTypes.map((type, index) =>
-                                        <li key={type} onClick={() => setActiveType(index)} className={classNames({
+                                    {selectedPizza.types.map((type, index) =>
+                                        <li key={type.id} onClick={() => setActiveType(index)} className={classNames({
                                             'active': activeType === index,
-                                            'disabled': !selectedPizza.types?.some(s=>s.id === index)
-                                        })}>{type}</li>
+                                            'disabled': !selectedPizza.types.includes(type)
+                                        })}>{availableTypes[type.id]}</li>
                                     )}
                                 </ul>
                                 <ul>
-                                    {availableSizes.map((size, index) =>
+                                    {availableSizes.map(size =>
                                         <li key={size} onClick={() => setActiveSize(size)} className={classNames({
                                             'active': activeSize === size,
-                                            'disabled': selectedPizza.types[index]?.availableSizes !== undefined &&
-                                                !selectedPizza.types[index]?.availableSizes.some(s => s.size === size)
+                                            'disabled': !selectedPizza.types[activeType].availableSizes.some(s=>s.size === size)
                                         })}>{size} см.</li>
                                     )}
                                 </ul>
