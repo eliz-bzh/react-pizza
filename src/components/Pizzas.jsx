@@ -55,6 +55,17 @@ const Pizzas = () => {
         setSelectedPizza(pizza);
     }
 
+    useEffect(() => {
+        if (isLoaded && items.length > 0) {
+            setSelectedPizza(items[0]);
+            if (items[0].types.length > 0) {
+                setActiveSize(items[0].types[0].availableSizes[0].size);
+                setActiveType(items[0].types[0].id);
+            }
+        }
+
+    }, [isLoaded, items]);
+
     /*if (!selectedPizza.types[activeType].availableSizes.some(s=>s.size === activeSize)) {
         setActiveSize(selectedPizza.types[activeType].availableSizes[0].size);
     }*/
@@ -96,18 +107,19 @@ const Pizzas = () => {
 
                             <div className="pizza-block__selector">
                                 <ul>
-                                    {selectedPizza.types.map((type, index) =>
-                                        <li key={type.id} onClick={() => setActiveType(index)} className={classNames({
+                                    {availableTypes.map((type, index) =>
+                                        <li key={type} onClick={() => setActiveType(index)} className={classNames({
                                             'active': activeType === index,
-                                            'disabled': !selectedPizza.types.includes(type)
-                                        })}>{availableTypes[type.id]}</li>
+                                            'disabled': !selectedPizza.types?.some(s=>s.id === index)
+                                        })}>{type}</li>
                                     )}
                                 </ul>
                                 <ul>
-                                    {availableSizes.map(size =>
+                                    {availableSizes.map((size, index) =>
                                         <li key={size} onClick={() => setActiveSize(size)} className={classNames({
                                             'active': activeSize === size,
-                                            'disabled': !selectedPizza.types[activeType].availableSizes.some(s=>s.size === size)
+                                            'disabled': selectedPizza.types[index]?.availableSizes !== undefined &&
+                                                !selectedPizza.types[index]?.availableSizes.some(s => s.size === size)
                                         })}>{size} см.</li>
                                     )}
                                 </ul>
