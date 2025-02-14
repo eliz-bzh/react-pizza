@@ -66,10 +66,6 @@ const Pizzas = () => {
 
     }, [isLoaded, items]);
 
-    /*if (!selectedPizza.types[activeType].availableSizes.some(s=>s.size === activeSize)) {
-        setActiveSize(selectedPizza.types[activeType].availableSizes[0].size);
-    }*/
-
     return (
         <div className="container">
             <div className="content__top">
@@ -103,6 +99,8 @@ const Pizzas = () => {
                                 <span className="close">&times;</span>
                             </div>
 
+                            <div className="pizza-block__details">{selectedPizza.types[activeType]?.availableSizes?.find(el=>el.size === activeSize)?.size} см, {availableTypes[activeType]} тесто {activeSize}, {selectedPizza.types[activeType]?.availableSizes?.find(el=>el.size === activeSize)?.weight} г</div>
+
                             <div className="pizza-block__ingredients">{selectedPizza.ingredients.map((ing, index)=><span key={index}>{!(index === selectedPizza.ingredients.length-1) ? `${ing}, ` : ing}</span>)}</div>
 
                             <div className="pizza-block__selector">
@@ -129,7 +127,6 @@ const Pizzas = () => {
 
                             <div className="pizza-block__bottom">
                                 <div className="pizza-block__price">В корзину за {selectedPizza.prices[activeSize]} ₽</div>
-                                {/*<div>{types[activeType].availableSizes.find(el=>el.size === activeSize)?.weight}</div>*/}
                                 <Button onClick={addPizzaToCart} className='button--add' outline>
                                     <svg
                                         width="12"
