@@ -143,7 +143,8 @@ const Pizzas = () => {
                                         />
                                     </svg>
                                     <span>В корзину за {prices[activeSize]} ₽</span>
-                                    </Button>
+                                    {cartItems[`${id}-${activeSize}-${availableTypes[activeType]}`] && <i>{cartItems[`${id}-${activeSize}-${availableTypes[activeType]}`]?.items.length}</i>}
+                                </Button>
                             </div>
                         </div>
                     </div>
