@@ -50,9 +50,10 @@ const Pizzas = () => {
     const [activeType, setActiveType] = useState(0);
     const [activeSize, setActiveSize] = useState(25);
 
-
-    const handlePizzaClick = (pizza)=>{
-        setSelectedPizza(pizza);
+    const onAddPizza = (pizza)=>{
+        const { id, name, images, prices } = pizza;
+        const obj = { id, name, imageUrl: images[activeType][activeSize], price: prices[activeSize], size: activeSize, type: availableTypes[activeType] };
+        addPizzaToCart(obj);
     }
 
     useEffect(() => {
@@ -66,6 +67,8 @@ const Pizzas = () => {
 
     }, [isLoaded, items]);
 
+    const  { images, name, ingredients, types, prices } = selectedPizza;
+
     return (
         <div className="container">
             <div className="content__top">
@@ -75,7 +78,7 @@ const Pizzas = () => {
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
                 {isLoaded ? items.map(item =>
-                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={cartItems[item.id]?.items.length} handleClickPizza={()=>handlePizzaClick(item)} handleDialogShow={setDialogShow} {...item} />
+                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={cartItems[item.id]?.items.length} handleClickPizza={()=>setSelectedPizza(item)} handleDialogShow={setDialogShow} {...item} />
                 ) : Array(12).fill(0).map((_, index) => (<LoadingBlock key={index} />))}
             </div>
             {dialogShow && (<div className="dialog">
@@ -89,29 +92,29 @@ const Pizzas = () => {
                                     'pizza_30': activeSize === 30,
                                     'pizza_35': activeSize === 35
                                 })}
-                                src={selectedPizza.images[activeType][activeSize]}
+                                src={images[activeType][activeSize]}
                                 alt="Pizza"
                             />
                         </div>
                         <div className="right">
                             <div className="dialog__container__header" onClick={() => setDialogShow(false)}>
-                                <h4 className="pizza-block__title">{selectedPizza.name}</h4>
+                                <h4 className="pizza-block__title">{name}</h4>
                                 <span className="close">&times;</span>
                             </div>
 
-                            <div className="pizza-block__details">{selectedPizza.types[activeType]?.availableSizes?.find(el=>el.size === activeSize)?.size} см, {availableTypes[activeType]} тесто {activeSize}, {selectedPizza.types[activeType]?.availableSizes?.find(el=>el.size === activeSize)?.weight} г</div>
+                            <div className="pizza-block__details">{types[activeType]?.availableSizes?.find(el=>el.size === activeSize)?.size} см, {availableTypes[activeType]} тесто {activeSize}, {types[activeType]?.availableSizes?.find(el=>el.size === activeSize)?.weight} г</div>
 
-                            <div className="pizza-block__ingredients">{selectedPizza.ingredients.map((ing, index)=><span key={index}>{!(index === selectedPizza.ingredients.length-1) ? `${ing}, ` : ing}</span>)}</div>
+                            <div className="pizza-block__ingredients">{ingredients.map((ing, index)=><span key={index}>{!(index === ingredients.length-1) ? `${ing}, ` : ing}</span>)}</div>
 
                             <div className="pizza-block__selector">
                                 <ul>
                                     {availableTypes.map((type, index) =>
                                         <li key={type} onClick={() => {
-                                            setActiveType(selectedPizza.types[index]?.id);
-                                            setActiveSize(selectedPizza.types[index]?.availableSizes[0].size);
+                                            setActiveType(types[index]?.id);
+                                            setActiveSize(types[index]?.availableSizes[0].size);
                                         }} className={classNames({
-                                            'active': activeType === selectedPizza.types[index]?.id,
-                                            'disabled': !selectedPizza.types?.some(s=>s.id === selectedPizza.types[index]?.id)
+                                            'active': activeType === types[index]?.id,
+                                            'disabled': !types?.some(s=>s.id === types[index]?.id)
                                         })}>{type}</li>
                                     )}
                                 </ul>
@@ -119,15 +122,14 @@ const Pizzas = () => {
                                     {availableSizes.map((size, index) =>
                                         <li key={size} onClick={() => setActiveSize(size)} className={classNames({
                                             'active': activeSize === size,
-                                            'disabled': !selectedPizza?.types?.find(el=>el.id === activeType)?.availableSizes.some(el=>el.size === size)
+                                            'disabled': !types?.find(el=>el.id === activeType)?.availableSizes.some(el=>el.size === size)
                                         })}>{size} см.</li>
                                     )}
                                 </ul>
                             </div>
 
                             <div className="pizza-block__bottom">
-                                <div className="pizza-block__price">В корзину за {selectedPizza.prices[activeSize]} ₽</div>
-                                <Button onClick={addPizzaToCart} className='button--add' outline>
+                                <Button onClick={()=>onAddPizza(selectedPizza)} className='button--add' outline>
                                     <svg
                                         width="12"
                                         height="12"
@@ -140,8 +142,7 @@ const Pizzas = () => {
                                             fill="white"
                                         />
                                     </svg>
-                                    <span>Добавить</span>
-                                    {/*addedCount && <i>{addedCount}</i>*/}
+                                    <span>В корзину за {prices[activeSize]} ₽</span>
                                 </Button>
                             </div>
                         </div>
