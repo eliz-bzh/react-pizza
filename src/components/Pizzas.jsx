@@ -67,7 +67,7 @@ const Pizzas = () => {
 
     }, [isLoaded, items]);
 
-    const  { images, name, ingredients, types, prices } = selectedPizza;
+    const  { id, images, name, ingredients, types, prices } = selectedPizza;
 
     return (
         <div className="container">
@@ -78,7 +78,7 @@ const Pizzas = () => {
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
                 {isLoaded ? items.map(item =>
-                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={cartItems[item.id]?.items.length} handleClickPizza={()=>setSelectedPizza(item)} handleDialogShow={setDialogShow} {...item} />
+                    <PizzaBlock onClickItem={addPizzaToCart} key={item.id} addedCount={Object.values(cartItems).flatMap(item=>item.items).filter(el=>el.id === item.id).length} handleClickPizza={()=>setSelectedPizza(item)} handleDialogShow={setDialogShow} {...item} />
                 ) : Array(12).fill(0).map((_, index) => (<LoadingBlock key={index} />))}
             </div>
             {dialogShow && (<div className="dialog">
@@ -143,7 +143,7 @@ const Pizzas = () => {
                                         />
                                     </svg>
                                     <span>В корзину за {prices[activeSize]} ₽</span>
-                                </Button>
+                                    </Button>
                             </div>
                         </div>
                     </div>
