@@ -38,7 +38,7 @@ const PizzaBlock = ({ id, images, name, types, prices, ingredients, isLoading, o
                         />
                     </svg>
                     <span>Выбрать</span>
-                    {addedCount && <i>{addedCount}</i>}
+                    {addedCount !== 0 && <i>{addedCount}</i>}
                 </Button>
             </div>
         </div>
