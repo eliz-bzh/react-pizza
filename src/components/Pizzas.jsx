@@ -50,8 +50,8 @@ const Pizzas = () => {
     const [activeType, setActiveType] = useState(0);
     const [activeSize, setActiveSize] = useState(25);
 
-    const onAddPizza = (pizza)=>{
-        const { id, name, images, prices } = pizza;
+    const onAddPizza = () =>{
+        const { id, name, images, prices } = selectedPizza;
         const obj = { id, name, imageUrl: images[activeType][activeSize], price: prices[activeSize], size: activeSize, type: availableTypes[activeType] };
         addPizzaToCart(obj);
     }
@@ -129,7 +129,7 @@ const Pizzas = () => {
                             </div>
 
                             <div className="pizza-block__bottom">
-                                <Button onClick={()=>onAddPizza(selectedPizza)} className='button--add' outline>
+                                <Button onClick={onAddPizza} className='button--add' outline>
                                     <svg
                                         width="12"
                                         height="12"
